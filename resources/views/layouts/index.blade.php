@@ -10,8 +10,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bg.css') }}" rel="stylesheet">
     <link rel="icon" href="{{ asset('img/icons/implementtaIcon.png') }}">
-    <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet">
-    @routes
+    <link href="{{ asset('fontawesomev6/css/all.css') }}" rel="stylesheet">
+   
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -27,15 +27,7 @@
         
         @yield('css')
 </head>
-{{-- <body onload="sinVueltaAtras();" onpageshow="if (event.persisted) sinVueltaAtras();" onunload=""> --}}
-    {{-- Mensajes de error de peticiones --}}
-    
-    
-    {{-- Spinner de caraga --}}
-    <div id="contenedor_carga">
-        <div id="carga">
-        </div>
-    </div>
+
     {{-- Navegador --}}
     <nav class="navbar navbar-expand-lg navbar-light">
         <a href="{{route('index')}}"><img
@@ -56,21 +48,7 @@
     </nav>
     <div class="navbar navbar-expand-lg navbar-dark bg-dark line" style="opacity: .9">
         <div class="btn-group  ms-auto" style="margin-right: 100px">
-            <button type="button" class="btn btn-secondary dropdown-toggle boton-reporte" data-bs-toggle="dropdown" aria-expanded="false">
-              Tecate Predial
-            </button>
-            <ul class="dropdown-menu">
-              <h6 class="dropdown-header">Utilidades de la plaza</h6>
-              <a class="dropdown-item" href="{{route('index')}}">
-                <i class="fas fa-balance-scale"></i> 
-                Determinaciones Fiscales</a>
-              <a class="dropdown-item" href="{{route('Reporte')}}">
-                <i class="fas fa-balance-scale"></i> 
-                Reporte</a>
-              <!-- <a class="dropdown-item" href="{{route('Excel')}}">
-                <img src="https://img.icons8.com/fluency/20/null/downloads-folder--v1.png"/> 
-                    Importación de datos</a> -->
-            </ul>
+           
           </div>
     </div>
     <div >
@@ -78,7 +56,7 @@
         @yield('contenido')
     </div>
     {{-- Footer --}}
-    <footer class="navbar nav-pills nav-fill navbar-expand-lg gap-5 px-5">
+    <footer class="navbar nav-pills nav-fill navbar-expand-lg gap-5 px-5 fixed-bottom">
         <span class="navbar-text" style="font-size:12px;font-weigth:normal;color: #7a7a7a;width: 40%;">
             Implementta ©<br>
             Estrategas de México <i class="far fa-registered"></i><br>
@@ -99,9 +77,7 @@
                     width="200" height="85" alt=""></a>
         </form>
     </footer>
-    {{-- Scripts --}}
-    <script src="{{ asset('js/offLoaderSpinner.js') }}"></script>
-    <script src="{{ asset('js/onLoaderSpinner.js') }}"></script>
+ 
 
     @yield('js')
 </body>
